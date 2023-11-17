@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private LayerMask wallLayer;
     [SerializeField] private Transform startPosition;
+    [SerializeField] private Dialog dialog;
 
     private Animator animator;
     private Rigidbody2D body;
@@ -20,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         body = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
+
+        StartCoroutine(DialogManager.Instance.ShowDialog(dialog));
     }
 
     private void Update()
