@@ -66,6 +66,7 @@ public class PlayerMovement : MonoBehaviour
         {
             wallJumpCooldown += Time.deltaTime;
         }
+        if(Input.GetKey(KeyCode.R)) { ReturnToCheckPoint(); }
     }
 
 
