@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditorInternal.VersionControl;
 using UnityEngine;
 using UnityEngine.Rendering.RendererUtils;
 using UnityEngine.UI;
@@ -13,25 +15,11 @@ public class PapersShown : MonoBehaviour
     [SerializeField] GameObject listItemPrefab;
     private int renderedCount=0;
     List<InventoryPaper> list;
-    TextMeshProUGUI titleText;
-    TextMeshProUGUI contentText;
     void Awake()
     {
-      list = Inventory.INSTANCE.getPapers();
-         titleText = title.GetComponent<TextMeshProUGUI>();
-        titleText.text = list[0].getTitle();
-         contentText = content.GetComponent<TextMeshProUGUI>();
-        contentText.text = list[0].getTitle();
-
-
-      
+        list = Inventory.INSTANCE.getPapers();
     }
-    private void click(InventoryPaper item)
-    {
-        Debug.Log(item.getTitle());
-        titleText.text = item.getTitle();
-        contentText.text = item.getTitle();
-    }
+
 
     // Update is called once per frame
     void Update()
@@ -43,9 +31,12 @@ public class PapersShown : MonoBehaviour
                 InventoryPaper item = list[i];
 
                 GameObject newButton = Instantiate(listItemPrefab, papersList.transform);
+                newButton.GetComponent<Image>().color = new Color(255, 255, 255, 1f);
                 newButton.GetComponent<Button>().onClick.AddListener(() =>
                 {
-                    click(item);
+                    title.GetComponent<TextMeshProUGUI>().text = item.getTitle();
+                    content.GetComponent<TextMeshProUGUI>().text = item.getValue();
+                    newButton.GetComponent<Image>().color = new Color(255, 255, 255,0.6f);
                 });
                 renderedCount++;
 
