@@ -12,6 +12,8 @@ public class Health : MonoBehaviour
     [Header("iFrames")]
     [SerializeField] private float iFramesDuration;
     [SerializeField] private int numberOfFlashes;
+
+    private bool invurable;
     private void Awake()
     {
         currentHealth = startingHealth;
@@ -21,6 +23,8 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        if (invurable) return;
+
         currentHealth = Mathf.Clamp(currentHealth - damage, 0, startingHealth);
         Debug.LogFormat("CurrentHealth: {0}", currentHealth);
         if (currentHealth > 0)
@@ -33,14 +37,18 @@ public class Health : MonoBehaviour
             GetComponent<PlayerMovement>().ReturnToCheckPoint();
             currentHealth = startingHealth;
         }
+        
+
     }
 
     public void AddHealth(float _value)
     {
         currentHealth = Mathf.Clamp(currentHealth + _value, 0, startingHealth);
     }
+
     private IEnumerator Invunerability()
     {
+        invurable = true;
         Physics2D.IgnoreLayerCollision(10, 11, true);
         for (int i = 0; i < numberOfFlashes; i++)
         {
@@ -50,6 +58,7 @@ public class Health : MonoBehaviour
             yield return new WaitForSeconds(iFramesDuration / (numberOfFlashes * 2));
         }
         Physics2D.IgnoreLayerCollision(10, 11, false);
+        invurable = false;
     }
 }
 
