@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FireTrap : MonoBehaviour
@@ -8,9 +7,13 @@ public class FireTrap : MonoBehaviour
     [Header("Firetrap Timers")]
     [SerializeField] private float activationDelay;
     [SerializeField] private float activeTime;
+    [SerializeField] private bool alwaysActive;
+    [SerializeField] private float activateCooldown;
+
     private Animator anim;
     private SpriteRenderer spriteRenderer;
 
+    private float cooldownTimer;
     private bool triggered;
     private bool active;
 
@@ -19,11 +22,25 @@ public class FireTrap : MonoBehaviour
         anim = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
+
+    void Update()
+    {
+        if (alwaysActive)
+        {
+            cooldownTimer += Time.deltaTime;
+
+            if (cooldownTimer > activateCooldown)
+            {
+                StartCoroutine(ActivateFireTrap());
+            }
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
         {
-            if (!triggered)
+            if (!alwaysActive && !triggered)
             {
                 StartCoroutine(ActivateFireTrap());
             }
@@ -36,6 +53,8 @@ public class FireTrap : MonoBehaviour
 
     private IEnumerator ActivateFireTrap()
     {
+        cooldownTimer = 0;
+
         triggered = true;
         spriteRenderer.color = Color.red;
 
