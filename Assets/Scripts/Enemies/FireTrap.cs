@@ -13,6 +13,8 @@ public class FireTrap : MonoBehaviour
     private Animator anim;
     private SpriteRenderer spriteRenderer;
 
+    private Health playerHealth;
+
     private float cooldownTimer;
     private bool triggered;
     private bool active;
@@ -25,10 +27,14 @@ public class FireTrap : MonoBehaviour
 
     void Update()
     {
+        if (playerHealth != null && active)
+        {
+            playerHealth.TakeDamage(damage);
+        }
+
         if (alwaysActive)
         {
             cooldownTimer += Time.deltaTime;
-
             if (cooldownTimer > activateCooldown)
             {
                 StartCoroutine(ActivateFireTrap());
@@ -40,14 +46,19 @@ public class FireTrap : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
+            playerHealth = collision.GetComponent<Health>();
+
+
             if (!alwaysActive && !triggered)
-            {
-                StartCoroutine(ActivateFireTrap());
-            }
-            if (active)
-            {
-                collision.GetComponent<Health>().TakeDamage(damage);
-            }
+            { StartCoroutine(ActivateFireTrap()); }
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            playerHealth = null;
         }
     }
 

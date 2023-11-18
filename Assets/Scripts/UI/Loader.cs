@@ -1,14 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Loader : MonoBehaviour
 {
+    private static readonly string LEVEL_PREFIX = "Level";
+
     public enum Scene
     {
+        LoadingScene,
         Level1,
-        LoadingScene
+        Level2
     }
     public static Scene targetScene;
 
@@ -23,4 +25,16 @@ public class Loader : MonoBehaviour
         SceneManager.LoadScene(Scene.LoadingScene.ToString());
 
     }
+
+    public static void LoadNextLevel()
+    {
+        int nextSceneIntValue = Int32.Parse(SceneManager.GetActiveScene().name.Replace(LEVEL_PREFIX, string.Empty)) + 1;
+        if (Enum.IsDefined(typeof(Scene), LEVEL_PREFIX + nextSceneIntValue.ToString()))
+        {
+            targetScene = (Scene)(Int32.Parse(SceneManager.GetActiveScene().name.Replace(LEVEL_PREFIX, string.Empty)) + 1);
+            SceneManager.LoadScene(Scene.LoadingScene.ToString());
+        }
+    }
+
+
 }
