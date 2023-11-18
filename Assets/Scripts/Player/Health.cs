@@ -1,24 +1,32 @@
 ﻿using System.Collections;
+using TMPro;
 using UnityEngine;
 public class Health : MonoBehaviour
 {
+    [Header("UI Elements")]
+    [SerializeField] private TextMeshProUGUI healthText;
+
     [Header("Health")]
     [SerializeField] private float startingHealth;
-    public float currentHealth { get; private set; }
-    private bool dead;
-    private Animator anim;
-    private SpriteRenderer spriteRend;
 
     [Header("iFrames")]
     [SerializeField] private float iFramesDuration;
     [SerializeField] private int numberOfFlashes;
 
+    public float currentHealth { get; private set; }
+    private bool dead;
+    private Animator anim;
+    private SpriteRenderer spriteRend;
+
     private bool invurable;
+
     private void Awake()
     {
         currentHealth = startingHealth;
         anim = GetComponent<Animator>();
         spriteRend = GetComponent<SpriteRenderer>();
+
+        healthText.text = startingHealth.ToString();
     }
 
     public void TakeDamage(float damage)
@@ -37,13 +45,14 @@ public class Health : MonoBehaviour
             GetComponent<PlayerMovement>().ReturnToCheckPoint();
             currentHealth = startingHealth;
         }
-        
 
+        healthText.text = currentHealth.ToString();
     }
 
     public void AddHealth(float _value)
     {
         currentHealth = Mathf.Clamp(currentHealth + _value, 0, startingHealth);
+        healthText.text = currentHealth.ToString();
     }
 
     private IEnumerator Invunerability()
