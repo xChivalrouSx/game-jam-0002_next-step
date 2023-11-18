@@ -221,7 +221,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5397871279385489551, guid: 897d4a891ce70924791bb86dba0fbf05, type: 3}
       propertyPath: m_Name
-      value: Spike (1)
+      value: Spike2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
