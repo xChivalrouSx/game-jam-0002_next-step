@@ -5193,6 +5193,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1489446179213868165, guid: aa6dba174baa9ef43828627eea079c79, type: 3}
+      propertyPath: alwaysActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1489446179213868165, guid: aa6dba174baa9ef43828627eea079c79, type: 3}
+      propertyPath: activateCooldown
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1813404941165167526, guid: aa6dba174baa9ef43828627eea079c79, type: 3}
       propertyPath: m_Name
       value: Fire
