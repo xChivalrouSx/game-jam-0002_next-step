@@ -26,10 +26,12 @@ public class Paper : MonoBehaviour
         Title.SetText(title);
         Content.SetText(Value);
         DetailPanel.SetActive(true);
+        Time.timeScale = 0f;
     }
     public void Destroy()
     {
         Destroy(gameObject);
+        Time.timeScale = 1f;
     }
     public void TakePaper()
     {
