@@ -7,6 +7,7 @@ public class MainMenuUI : MonoBehaviour
 {
     [SerializeField] private GameObject MainMenu;
     [SerializeField] private GameObject Controls;
+    [SerializeField] GameObject creditPanel;
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Backspace))
@@ -15,6 +16,12 @@ public class MainMenuUI : MonoBehaviour
         }
     }
         
+
+    public void CloseCredit()
+    {
+        creditPanel.SetActive(false);
+    }
+
     public void Play()
     {
         Loader.Load(Loader.Scene.Level1);
@@ -32,7 +39,7 @@ public class MainMenuUI : MonoBehaviour
 
     public void Credits()
     {
-
+        creditPanel.SetActive(true);
     }
     public void ControlMenu()
     {
