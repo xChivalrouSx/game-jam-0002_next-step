@@ -46,9 +46,11 @@ public class Paper : MonoBehaviour
     }
     public void TakePaper()
     {
-        showPaper();
-        Debug.Log("Taken paper");
-        Inventory.INSTANCE.addPaper(title, Value);
-
+        if (!shownPaper)
+        {
+            showPaper();
+            Debug.Log("Taken paper");
+            Inventory.INSTANCE.addPaper(title, Value);
+        }
     }
 }
