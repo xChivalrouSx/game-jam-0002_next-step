@@ -13,7 +13,7 @@ public class Paper : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Time.timeScale == 0 && Input.GetKeyDown(KeyCode.E))
         {
             Destroy();
         }
