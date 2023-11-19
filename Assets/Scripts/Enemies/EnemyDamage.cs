@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyDamage : MonoBehaviour
@@ -8,7 +6,7 @@ public class EnemyDamage : MonoBehaviour
 
     protected void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Player")
-            collision.GetComponent<Health>().TakeDamage(damage);
+        if (collision.tag == "Player")
+            collision.GetComponent<Health>()?.TakeDamage(damage);
     }
 }

@@ -1,3 +1,5 @@
+using Cinemachine;
+using System.Linq;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -16,20 +18,43 @@ public class PlayerMovement : MonoBehaviour
     private float wallJumpCooldown;
     private float horizontalInput;
 
+    private bool robotActiveFirsTime;
+    private bool isPlayerRobot;
+    private float playerRobotTimer;
+
     private void Awake()
     {
         canMove = true;
+        isPlayerRobot = gameObject.name.Equals("PlayerRobot");
+        playerRobotTimer = 0f;
 
         animator = GetComponent<Animator>();
         body = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
     }
 
-
     private void Update()
     {
         if (!canMove) { return; }
         if (Time.timeScale == 0) return;
+
+        if (isPlayerRobot && gameObject.activeSelf)
+        {
+            playerRobotTimer += Time.deltaTime;
+            if (playerRobotTimer > 5f)
+            {
+                playerRobotTimer = 0f;
+                GameObject playerRobotGameObject = ((GameObject)FindObjectsByType(typeof(GameObject), FindObjectsInactive.Include, FindObjectsSortMode.None).FirstOrDefault(x => x.name.Equals("PlayerRobot")));
+                GameObject playerGameObject = ((GameObject)FindObjectsByType(typeof(GameObject), FindObjectsInactive.Include, FindObjectsSortMode.None).FirstOrDefault(x => x.name.Equals("Player")));
+                playerGameObject.transform.position = playerRobotGameObject.transform.position;
+
+                playerRobotGameObject.SetActive(false);
+                playerGameObject.SetActive(true);
+
+                CinemachineVirtualCamera virtualCamera = (CinemachineVirtualCamera)FindObjectsByType(typeof(CinemachineVirtualCamera), FindObjectsInactive.Exclude, FindObjectsSortMode.None).FirstOrDefault();
+                virtualCamera.Follow = playerGameObject.transform;
+            }
+        }
 
         horizontalInput = Input.GetAxis("Horizontal");
         // Player visual flip

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -18,7 +16,7 @@ public class InventoryInfo : MonoBehaviour
         paperCount = PaperInfo.GetComponent<TextMeshProUGUI>();
         ironCount = IronInfo.GetComponent<TextMeshProUGUI>();
         coperCount = CoperInfo.GetComponent<TextMeshProUGUI>();
-        
+
     }
 
     // Update is called once per frame
@@ -29,7 +27,7 @@ public class InventoryInfo : MonoBehaviour
         coperCount.text = Inventory.INSTANCE.getCoperCount().ToString();
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            PapersPanel.SetActive(!(PapersPanel.active));
+            PapersPanel.SetActive(!(PapersPanel.activeSelf));
         }
     }
 }

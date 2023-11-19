@@ -33,8 +33,6 @@ public class Paper : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name.Equals("Level1"))
         {
-            // GameObject.FindGameObjectWithTag("GroundDestroy").SetActive(true);
-            //GameObject.Find("GroundDestroy").SetActive(true);
             ((GameObject)FindObjectsByType(typeof(GameObject), FindObjectsInactive.Include, FindObjectsSortMode.None).FirstOrDefault(x => x.name.Equals("GroundDestroy"))).SetActive(true);
             Loader.LoadNextLevel();
         }
