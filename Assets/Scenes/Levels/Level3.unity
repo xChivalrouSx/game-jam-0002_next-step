@@ -6030,7 +6030,7 @@ PrefabInstance:
       objectReference: {fileID: 201329179}
     - target: {fileID: 5463845448780688297, guid: a7d5e162499d676488955b605d531249, type: 3}
       propertyPath: dialog.lines.Array.size
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5463845448780688297, guid: a7d5e162499d676488955b605d531249, type: 3}
       propertyPath: dialog.lines.Array.data[0]
