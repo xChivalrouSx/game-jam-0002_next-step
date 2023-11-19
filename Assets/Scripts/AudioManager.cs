@@ -22,8 +22,8 @@ public class AudioManager : MonoBehaviour
             Instance = this;
         }
         DontDestroyOnLoad(gameObject);
-        PlayerPrefs.SetFloat("Music", .5f);
-        PlayerPrefs.SetFloat("Sfx", .5f);
+        PlayerPrefs.SetFloat("Music", .4f);
+        PlayerPrefs.SetFloat("Sfx", .4f);
         PlayerPrefs.Save();
     }
 
