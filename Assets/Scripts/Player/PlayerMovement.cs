@@ -30,6 +30,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+
+        if (Time.timeScale == 0) return;
+
         horizontalInput = Input.GetAxis("Horizontal");
         // Player visual flip
         if (horizontalInput > 0.01f)
