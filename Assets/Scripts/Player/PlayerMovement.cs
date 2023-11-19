@@ -27,10 +27,10 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+
     private void Update()
     {
         horizontalInput = Input.GetAxis("Horizontal");
-
         // Player visual flip
         if (horizontalInput > 0.01f)
         {
@@ -78,11 +78,13 @@ public class PlayerMovement : MonoBehaviour
         {
             body.velocity = new Vector2(body.velocity.x, jumpPower);
             animator.SetTrigger("jump");
+            AudioManager.Instance?.PlayJumpSFX();
         }
         else if (OnWall() && !IsGrounded())
         {
             if (horizontalInput == 0)
             {
+                
                 body.velocity = new Vector2(-Mathf.Sign(transform.localScale.x) * 15, 0);
                 transform.localScale = new Vector3(-Mathf.Sign(transform.localScale.x), transform.localScale.y, transform.localScale.z);
             }
@@ -92,6 +94,7 @@ public class PlayerMovement : MonoBehaviour
             }
 
             wallJumpCooldown = 0;
+            AudioManager.Instance?.PlayJumpSFX();
         }
     }
 

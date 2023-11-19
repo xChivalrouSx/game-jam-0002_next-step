@@ -40,12 +40,18 @@ public class PauseMenuUIManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1;
-        Destroy(gameObject);
+        if (SceneManager.GetActiveScene().name == Loader.Scene.Level1.ToString())
+            Destroy(gameObject);
+        else
+            PauseGame(false);
+        
+        
     }
 
     public void SoundVolume()
     {
         AudioManager.Instance?.SfxVolume(0.2f);
+        Debug.Log("Ahoa");
     }
 
     public void MusicVolume()

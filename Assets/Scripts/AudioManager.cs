@@ -7,6 +7,7 @@ public class AudioManager : MonoBehaviour
     public AudioSource musicSource;
     public AudioSource soundSource;
     public AudioClip jumpAudioClip;
+    public AudioClip walkAudioClip;
     public static AudioManager Instance { get; set; }
 
     private void Awake()
@@ -28,7 +29,7 @@ public class AudioManager : MonoBehaviour
 
     public void MusicVolume(float volume)
     {
-        ChangeSourceVolume(0.3f, "Music", volume, soundSource);
+        ChangeSourceVolume(0.3f, "Music", volume, musicSource);
     }
     public void SfxVolume(float volume)
     {
@@ -56,6 +57,11 @@ public class AudioManager : MonoBehaviour
     public void PlayJumpSFX()
     {
         soundSource.PlayOneShot(jumpAudioClip);
+    }
+
+    public void PlayWalkSFX()
+    {
+        soundSource.PlayOneShot(walkAudioClip);
     }
 
     public void PlaySound(AudioClip sound)
