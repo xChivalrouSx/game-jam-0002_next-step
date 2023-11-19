@@ -5,7 +5,13 @@ using UnityEngine.UI;
 
 public class MainMenuUI : MonoBehaviour
 {
-    
+    [SerializeField] GameObject creditPanel;
+
+    public void CloseCredit()
+    {
+        creditPanel.SetActive(false);
+    }
+
     public void Play()
     {
         Loader.Load(Loader.Scene.Level1);
@@ -23,7 +29,7 @@ public class MainMenuUI : MonoBehaviour
 
     public void Credits()
     {
-
+        creditPanel.SetActive(true);
     }
 
     public void Quit()
