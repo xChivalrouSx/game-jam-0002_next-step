@@ -40,7 +40,11 @@ public class PauseMenuUIManager : MonoBehaviour
     #region Pause
     private void PauseGame(bool status)
     {
-        dayInfoCanvas.SetActive(!dayInfoCanvas.active);
+        if(dayInfoCanvas!=null)
+        {
+            dayInfoCanvas?.SetActive(!dayInfoCanvas.active);
+        }
+        
         pauseScreen.SetActive(status);
         Time.timeScale = status ? 0 : 1;
     }

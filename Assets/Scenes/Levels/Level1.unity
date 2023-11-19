@@ -4857,7 +4857,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3053196540061486066, guid: 57a820a1b15b97d40b2b68cd67817720, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3665769682142829300, guid: 57a820a1b15b97d40b2b68cd67817720, type: 3}
       propertyPath: dayInfoCanvas
