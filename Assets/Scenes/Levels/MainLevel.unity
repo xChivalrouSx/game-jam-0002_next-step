@@ -216,6 +216,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &280015733 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6621761347372965354, guid: 0b7b3d4dfd065c2439a1f927b8251953, type: 3}
+  m_PrefabInstance: {fileID: 677097762}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &315550691
 GameObject:
   m_ObjectHideFlags: 0
@@ -787,6 +792,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5315108551701839475, guid: 0b7b3d4dfd065c2439a1f927b8251953, type: 3}
+      propertyPath: interactInfo
+      value: 
+      objectReference: {fileID: 280015733}
     - target: {fileID: 7732491156877394671, guid: 0b7b3d4dfd065c2439a1f927b8251953, type: 3}
       propertyPath: m_LocalPosition.x
       value: 22.07
@@ -1404,6 +1413,10 @@ PrefabInstance:
     - target: {fileID: 6471327292511636304, guid: 19acf3da7980ccb46a2bed8546fdc44d, type: 3}
       propertyPath: m_Name
       value: DialogCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8083202013237225872, guid: 19acf3da7980ccb46a2bed8546fdc44d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 35.80005
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
