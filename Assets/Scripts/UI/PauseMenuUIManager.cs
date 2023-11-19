@@ -7,7 +7,9 @@ public class PauseMenuUIManager : MonoBehaviour
 {
     [Header("Pause")]
     [SerializeField] GameObject pauseScreen;
-
+    [SerializeField] GameObject controls;
+    [SerializeField] GameObject dayInfoCanvas;
+    private bool controlScreen = false;
 
     private void Awake()
     {
@@ -17,15 +19,28 @@ public class PauseMenuUIManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (!controlScreen)
         {
-            PauseGame(!pauseScreen.activeInHierarchy);
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                PauseGame(!pauseScreen.activeInHierarchy);
+            }
+        }
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Backspace))
+            {
+
+                controls.SetActive(false);
+                pauseScreen.SetActive(true);
+            }
         }
     }
 
     #region Pause
     private void PauseGame(bool status)
     {
+        dayInfoCanvas.SetActive(!dayInfoCanvas.active);
         pauseScreen.SetActive(status);
         Time.timeScale = status ? 0 : 1;
     }
@@ -35,7 +50,12 @@ public class PauseMenuUIManager : MonoBehaviour
     {
         PauseGame(false);
     }
-
+    public void ControlMenu()
+    {
+        controls.SetActive(true);
+        pauseScreen.SetActive(false);
+        controlScreen = true;
+    }
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -72,6 +92,12 @@ public class PauseMenuUIManager : MonoBehaviour
         #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
         #endif
+    }
+    public void Back()
+    {
+        pauseScreen.SetActive(true);
+        controls.SetActive(false);
+        controlScreen = false;
     }
 
 }

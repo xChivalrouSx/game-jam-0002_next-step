@@ -39,6 +39,7 @@ public class MainMenuUI : MonoBehaviour
 
     public void Credits()
     {
+        MainMenu.SetActive(false);
         creditPanel.SetActive(true);
     }
     public void ControlMenu()
@@ -59,6 +60,7 @@ public class MainMenuUI : MonoBehaviour
     {
         MainMenu.SetActive(true);
         Controls.SetActive(false);
+        creditPanel.SetActive(false);
     }
 
 
