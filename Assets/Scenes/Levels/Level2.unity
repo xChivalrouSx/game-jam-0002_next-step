@@ -50851,6 +50851,7 @@ MonoBehaviour:
   playerMovement: {fileID: 0}
   dialogBox: {fileID: 428739527}
   dialogText: {fileID: 428739526}
+  infoText: {fileID: 0}
   lettersPerSecond: 40
 --- !u!114 &845517894
 MonoBehaviour:
@@ -125517,6 +125518,15 @@ PrefabInstance:
     - target: {fileID: 7732491156877394671, guid: 0b7b3d4dfd065c2439a1f927b8251953, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8997093324743584891, guid: 0b7b3d4dfd065c2439a1f927b8251953, type: 3}
+      propertyPath: Value
+      value: "\"..., kendini anlamak i\xE7in kulland\u0131\u011F\u0131 tek organ\u0131d\u0131r.\"
+        - Albert Einstein"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8997093324743584891, guid: 0b7b3d4dfd065c2439a1f927b8251953, type: 3}
+      propertyPath: title
+      value: Ipucu 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
