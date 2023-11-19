@@ -28,7 +28,7 @@ public class SelectionArrow : MonoBehaviour
             ChangePosition(1);
         }
 
-        if(Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
         {
             Interact();
         }

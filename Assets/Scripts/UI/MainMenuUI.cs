@@ -5,7 +5,16 @@ using UnityEngine.UI;
 
 public class MainMenuUI : MonoBehaviour
 {
-    
+    [SerializeField] private GameObject MainMenu;
+    [SerializeField] private GameObject Controls;
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Backspace))
+        {
+            Back();
+        }
+    }
+        
     public void Play()
     {
         Loader.Load(Loader.Scene.Level1);
@@ -25,6 +34,11 @@ public class MainMenuUI : MonoBehaviour
     {
 
     }
+    public void ControlMenu()
+    {
+        MainMenu.SetActive(false);
+        Controls.SetActive(true);
+    }
 
     public void Quit()
     {
@@ -33,5 +47,12 @@ public class MainMenuUI : MonoBehaviour
         UnityEditor.EditorApplication.isPlaying = false;
 #endif
     }
+
+    public void Back()
+    {
+        MainMenu.SetActive(true);
+        Controls.SetActive(false);
+    }
+
 
 }

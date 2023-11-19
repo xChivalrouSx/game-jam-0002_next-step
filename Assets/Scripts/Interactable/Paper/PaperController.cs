@@ -10,12 +10,16 @@ public class Paper : MonoBehaviour
     [SerializeField] private GameObject DetailPanel;
     [SerializeField] private TextMeshProUGUI Title;
     [SerializeField] private TextMeshProUGUI Content;
+    private bool shownPaper=false;
 
     void Update()
     {
-        if (Time.timeScale == 0 && Input.GetKeyDown(KeyCode.E))
+        if (shownPaper)
         {
-            Destroy();
+            if (Input.GetKeyDown(KeyCode.Tab))
+            {
+                Destroy();
+            }
         }
     }
 
@@ -25,6 +29,7 @@ public class Paper : MonoBehaviour
         Content.SetText(Value);
         DetailPanel.SetActive(true);
         Time.timeScale = 0f;
+        shownPaper = true;
     }
 
     public void Destroy()
