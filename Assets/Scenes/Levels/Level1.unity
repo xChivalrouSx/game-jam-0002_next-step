@@ -5023,7 +5023,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.30980393, g: 0.44705883, b: 0.65882355, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -10113,6 +10113,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 614250850607891289, guid: fcdc6762a24174145bf3bf5645744033, type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 519420031}
+    - target: {fileID: 614250850607891289, guid: fcdc6762a24174145bf3bf5645744033, type: 3}
       propertyPath: hourInfoText
       value: 
       objectReference: {fileID: 1382927288}
@@ -10185,6 +10189,10 @@ PrefabInstance:
       propertyPath: m_Offset.x
       value: -0.32
       objectReference: {fileID: 0}
+    - target: {fileID: 6039803075820690250, guid: 52c03ee3f0dde904192e164b2a5a5ec5, type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 519420031}
     - target: {fileID: 6039803075820690250, guid: 52c03ee3f0dde904192e164b2a5a5ec5, type: 3}
       propertyPath: dayInfoText
       value: 
