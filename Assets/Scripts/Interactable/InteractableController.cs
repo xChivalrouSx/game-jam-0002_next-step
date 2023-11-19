@@ -10,6 +10,7 @@ public class InteractableController : MonoBehaviour
     [SerializeField] private KeyCode interactKey;
     [SerializeField] private UnityEvent interactAction;
     [SerializeField] private GameObject interactInfo;
+    [SerializeField] private AudioClip soundEffect;
 
     void Start()
     {
@@ -23,6 +24,7 @@ public class InteractableController : MonoBehaviour
             if (Input.GetKeyDown(interactKey))
             {
                 interactAction.Invoke();
+                AudioManager.Instance?.PlaySound(soundEffect);
             }
         }     
     }
