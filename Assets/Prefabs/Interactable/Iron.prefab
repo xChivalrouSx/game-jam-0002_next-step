@@ -117,7 +117,7 @@ PrefabInstance:
     - target: {fileID: 1613314015177283770, guid: ab5693b826ad53348bcd348978bc11ec, type: 3}
       propertyPath: interactInfo
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2966718416338277458}
     - target: {fileID: 1613314015177283770, guid: ab5693b826ad53348bcd348978bc11ec, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -207,6 +207,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab5693b826ad53348bcd348978bc11ec, type: 3}
+--- !u!1 &2966718416338277458 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 307814057439329059, guid: ab5693b826ad53348bcd348978bc11ec, type: 3}
+  m_PrefabInstance: {fileID: 3273683650465050481}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5863779369162358924 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8939119331667013629, guid: ab5693b826ad53348bcd348978bc11ec, type: 3}
