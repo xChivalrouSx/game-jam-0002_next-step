@@ -138,6 +138,7 @@ MonoBehaviour:
   - {fileID: 7045532675723435874}
   - {fileID: 1404353444273771482}
   - {fileID: 3175136603685157571}
+  soundEffect: {fileID: 8300000, guid: c95cc2eab79f3f244b54c7c403da636c, type: 3}
 --- !u!1 &6909576553637323793
 GameObject:
   m_ObjectHideFlags: 0

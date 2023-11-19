@@ -306,8 +306,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   startPosition: {fileID: 0}
-  dialog:
-    lines: []
 --- !u!114 &3589214259163961098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,6 +322,7 @@ MonoBehaviour:
   startingHealth: 3
   iFramesDuration: 4
   numberOfFlashes: 4
+  hurtSoundEffect: {fileID: 8300000, guid: 93ed438f7e440404bb7d8d0c718e3cc6, type: 3}
 --- !u!1001 &1720028539781849978
 PrefabInstance:
   m_ObjectHideFlags: 0

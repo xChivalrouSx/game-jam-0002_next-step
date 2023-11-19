@@ -12,7 +12,7 @@ public class Health : MonoBehaviour
     [Header("iFrames")]
     [SerializeField] private float iFramesDuration;
     [SerializeField] private int numberOfFlashes;
-
+    [SerializeField] private AudioClip hurtSoundEffect;
     public float currentHealth { get; private set; }
     private bool dead;
     private Animator anim;
@@ -34,6 +34,7 @@ public class Health : MonoBehaviour
         if (invurable) return;
 
         currentHealth = Mathf.Clamp(currentHealth - damage, 0, startingHealth);
+        AudioManager.Instance?.PlaySound(hurtSoundEffect);
         Debug.LogFormat("CurrentHealth: {0}", currentHealth);
         if (currentHealth > 0)
         {

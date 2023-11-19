@@ -10,10 +10,11 @@ public class EnemyProjectile : EnemyDamage
     [SerializeField] private float resetTime;
     private float lifetime;
 
-    public void ActivateProjectile()
+    public void ActivateProjectile(AudioClip soundEffect)
     {
         lifetime = 0;
         gameObject.SetActive(true);
+        AudioManager.Instance?.PlaySound(soundEffect);
     }
 
     private void Update()
