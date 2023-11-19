@@ -11,6 +11,9 @@ public class EndGame : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+    public void empty()
+    {
+    }
 
     public void Quit()
     {
