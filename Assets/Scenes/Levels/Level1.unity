@@ -5164,6 +5164,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 13.79
       objectReference: {fileID: 0}
+    - target: {fileID: 8997093324743584891, guid: 0b7b3d4dfd065c2439a1f927b8251953, type: 3}
+      propertyPath: Value
+      value: "\"..., evreni anlamak i\xE7in kendi evrenini yarat\u0131r.\" - David
+        Eagleman "
+      objectReference: {fileID: 0}
+    - target: {fileID: 8997093324743584891, guid: 0b7b3d4dfd065c2439a1f927b8251953, type: 3}
+      propertyPath: title
+      value: "Hikaye Ba\u015Flang\u0131c\u0131"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
