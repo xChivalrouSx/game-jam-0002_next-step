@@ -1,3 +1,4 @@
+﻿using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -10,6 +11,10 @@ public class WorkBuilding : MonoBehaviour
     {
         hourInfoText.text = "18:00";
         camera.backgroundColor = new Color(33f / 255f, 45f / 255f, 65f / 255f, 0);
+
+        Dialog dialog = new Dialog();
+        dialog.Lines = new List<string>() { "Yorgun bir gün ardından artık dinlenmek için eve gitme zamanı." };
+        StartCoroutine(DialogManager.Instance.ShowDialog(dialog));
     }
 
 }

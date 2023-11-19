@@ -19,6 +19,7 @@ public class DialogManager : MonoBehaviour
 
     private void Awake()
     {
+        goFast = false;
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
@@ -30,9 +31,12 @@ public class DialogManager : MonoBehaviour
         }
     }
 
+    private bool goFast;
+
     Dialog dialog;
     int currentLine = 0;
     bool isTyping;
+
     public void HandleUpdate()
     {
         if (Input.GetKeyDown(KeyCode.Z) && !isTyping)
@@ -40,10 +44,12 @@ public class DialogManager : MonoBehaviour
             ++currentLine;
             if (currentLine < dialog.Lines.Count)
             {
+                goFast = false;
                 StartCoroutine(TypeDialog(dialog.Lines[currentLine]));
             }
             else
             {
+                goFast = false;
                 dialogBox.SetActive(false);
                 currentLine = 0;
                 OnHideDialog?.Invoke();
@@ -61,6 +67,7 @@ public class DialogManager : MonoBehaviour
         this.dialog = dialog;
         if (dialog.Lines.Count > 0)
         {
+            goFast = false;
             dialogBox.SetActive(true);
             StartCoroutine(TypeDialog(dialog.Lines[0]));
         }
@@ -68,15 +75,24 @@ public class DialogManager : MonoBehaviour
 
     public IEnumerator TypeDialog(string line)
     {
-        infoText.text = string.Empty;
+        infoText.text = "Geçmek için Z'ye basın.";
         isTyping = true;
         dialogText.text = string.Empty;
         foreach (var letter in line.ToCharArray())
         {
             dialogText.text += letter;
-            yield return new WaitForSeconds(1f / lettersPerSecond);
+
+            if (Input.GetKeyDown(KeyCode.Z))
+            {
+                goFast = true;
+            }
+
+            if (!goFast)
+            {
+                yield return new WaitForSeconds(1f / lettersPerSecond);
+            }
         }
-        infoText.text = "Z'ye basın.";
+        goFast = false;
         isTyping = false;
     }
 }

@@ -1,3 +1,4 @@
+﻿using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -12,16 +13,21 @@ public class HomeBuilding : MonoBehaviour
 
     private void Awake()
     {
-        dayInfoText.text = dayCount + ". G�n";
+        dayInfoText.text = dayCount + ". Gün";
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (hourInfoText.text.Equals("09:00")) { return; }
 
-        dayInfoText.text = ++dayCount + ". G�n";
+        dayInfoText.text = ++dayCount + ". Gün";
         hourInfoText.text = "09:00";
         camera.backgroundColor = new Color(79f / 255f, 114f / 255f, 168f / 255f, 0);
+
+        Dialog dialog = new Dialog();
+        dialog.Lines = new List<string>() { "Yeni bir gün ve işe doğru yola koyulma zamanı geldi." };
+        StartCoroutine(DialogManager.Instance.ShowDialog(dialog));
+
         if (dayCount == 3)
         {
             paperObject.SetActive(true);

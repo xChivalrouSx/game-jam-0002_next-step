@@ -10369,7 +10369,7 @@ PrefabInstance:
       objectReference: {fileID: 201329179}
     - target: {fileID: 5463845448780688297, guid: a7d5e162499d676488955b605d531249, type: 3}
       propertyPath: dialog.lines.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5463845448780688297, guid: a7d5e162499d676488955b605d531249, type: 3}
       propertyPath: dialog.lines.Array.data[0]
@@ -10387,6 +10387,10 @@ PrefabInstance:
         d\xF6n\xFCp duruyor, ard\u0131ndan ak\u015Fam saatlerinde yine ayn\u0131
         yollar\u0131 kullanarak eve d\xF6n\xFCyordu. \u0130\u015Fte b\xF6yle, g\xFCnler
         birbirine benzer bir \u015Fekilde ak\u0131p gidiyordu."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5463845448780688297, guid: a7d5e162499d676488955b605d531249, type: 3}
+      propertyPath: dialog.lines.Array.data[2]
+      value: "Yeni bir g\xFCn ve i\u015Fe do\u011Fru yola koyulma zaman\u0131 geldi."
       objectReference: {fileID: 0}
     - target: {fileID: 7258375163576421295, guid: a7d5e162499d676488955b605d531249, type: 3}
       propertyPath: m_IsActive
