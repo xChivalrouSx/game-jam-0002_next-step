@@ -10375,6 +10375,10 @@ PrefabInstance:
         yollar\u0131 kullanarak eve d\xF6n\xFCyordu. \u0130\u015Fte b\xF6yle, g\xFCnler
         birbirine benzer bir \u015Fekilde ak\u0131p gidiyordu."
       objectReference: {fileID: 0}
+    - target: {fileID: 7258375163576421295, guid: a7d5e162499d676488955b605d531249, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8377968768607961167, guid: a7d5e162499d676488955b605d531249, type: 3}
       propertyPath: m_Name
       value: Player
