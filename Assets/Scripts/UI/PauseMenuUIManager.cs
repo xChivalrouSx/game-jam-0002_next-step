@@ -39,6 +39,8 @@ public class PauseMenuUIManager : MonoBehaviour
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1;
+        Destroy(gameObject);
     }
 
     public void SoundVolume()
