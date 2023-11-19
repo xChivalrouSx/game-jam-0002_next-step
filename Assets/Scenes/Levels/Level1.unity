@@ -10322,6 +10322,10 @@ PrefabInstance:
       propertyPath: dialog.lines.Array.data[1]
       value: Welcome to the game!!
       objectReference: {fileID: 0}
+    - target: {fileID: 7258375163576421295, guid: a7d5e162499d676488955b605d531249, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8377968768607961167, guid: a7d5e162499d676488955b605d531249, type: 3}
       propertyPath: m_Name
       value: Player
