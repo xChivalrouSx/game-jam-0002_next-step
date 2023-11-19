@@ -231,6 +231,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   interactInfo: {fileID: 307814057439329059}
+  soundEffect: {fileID: 0}
 --- !u!1 &8041142566010720586
 GameObject:
   m_ObjectHideFlags: 0

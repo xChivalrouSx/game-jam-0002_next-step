@@ -1664,6 +1664,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8997093324743584891, guid: 0b7b3d4dfd065c2439a1f927b8251953, type: 3}
+      propertyPath: Value
+      value: "\"..., b\xFCt\xFCn organlar aras\u0131nda en m\xFCkemmel olan\u0131d\u0131r.
+        \xC7\xFCnk\xFC di\u011Fer organlar\u0131n\u0131 inceleyen bir organ\u0131
+        yoktur.\" - Hippocrates"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8997093324743584891, guid: 0b7b3d4dfd065c2439a1f927b8251953, type: 3}
+      propertyPath: title
+      value: "\u0130pucu 1"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
