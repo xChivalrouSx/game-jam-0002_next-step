@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,6 +8,7 @@ public class DialogManager : MonoBehaviour
     [SerializeField] PlayerMovement playerMovement;
     [SerializeField] GameObject dialogBox;
     [SerializeField] Text dialogText;
+    [SerializeField] Text infoText;
 
     [SerializeField] int lettersPerSecond;
 
@@ -18,7 +19,15 @@ public class DialogManager : MonoBehaviour
 
     private void Awake()
     {
-        Instance = this;
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        else
+        {
+            Instance = this;
+        }
     }
 
     Dialog dialog;
@@ -59,6 +68,7 @@ public class DialogManager : MonoBehaviour
 
     public IEnumerator TypeDialog(string line)
     {
+        infoText.text = string.Empty;
         isTyping = true;
         dialogText.text = string.Empty;
         foreach (var letter in line.ToCharArray())
@@ -66,6 +76,7 @@ public class DialogManager : MonoBehaviour
             dialogText.text += letter;
             yield return new WaitForSeconds(1f / lettersPerSecond);
         }
+        infoText.text = "Z'ye basın.";
         isTyping = false;
     }
 }
