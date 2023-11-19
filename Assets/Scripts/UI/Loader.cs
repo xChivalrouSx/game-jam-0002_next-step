@@ -10,7 +10,9 @@ public class Loader : MonoBehaviour
     {
         LoadingScene,
         Level1,
-        Level2
+        Level2,
+        Level3,
+        Level4
     }
     public static Scene targetScene;
 

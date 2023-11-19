@@ -1,7 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Paper : MonoBehaviour
 {
@@ -11,14 +11,12 @@ public class Paper : MonoBehaviour
     [SerializeField] private TextMeshProUGUI Title;
     [SerializeField] private TextMeshProUGUI Content;
 
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
-       
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Destroy();
+        }
     }
 
     private void showPaper()
@@ -28,16 +26,26 @@ public class Paper : MonoBehaviour
         DetailPanel.SetActive(true);
         Time.timeScale = 0f;
     }
+
     public void Destroy()
     {
         Destroy(gameObject);
+
+        if (SceneManager.GetActiveScene().name.Equals("Level1"))
+        {
+            // GameObject.FindGameObjectWithTag("GroundDestroy").SetActive(true);
+            //GameObject.Find("GroundDestroy").SetActive(true);
+            ((GameObject)FindObjectsByType(typeof(GameObject), FindObjectsInactive.Include, FindObjectsSortMode.None).FirstOrDefault(x => x.name.Equals("GroundDestroy"))).SetActive(true);
+            Loader.LoadNextLevel();
+        }
+
         Time.timeScale = 1f;
     }
     public void TakePaper()
     {
         showPaper();
         Debug.Log("Taken paper");
-        Inventory.INSTANCE.addPaper(title, Value);     
+        Inventory.INSTANCE.addPaper(title, Value);
 
     }
 }
