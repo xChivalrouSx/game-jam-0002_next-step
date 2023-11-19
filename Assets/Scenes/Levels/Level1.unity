@@ -156,6 +156,7 @@ MonoBehaviour:
   playerMovement: {fileID: 6067202988743903271}
   dialogBox: {fileID: 1278201505}
   dialogText: {fileID: 1278201504}
+  infoText: {fileID: 1191100913}
   lettersPerSecond: 40
 --- !u!114 &39978286
 MonoBehaviour:
@@ -4855,14 +4856,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseMenuUIManager
       objectReference: {fileID: 0}
-    - target: {fileID: 3053196540061486066, guid: 57a820a1b15b97d40b2b68cd67817720, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3665769682142829300, guid: 57a820a1b15b97d40b2b68cd67817720, type: 3}
-      propertyPath: dayInfoCanvas
-      value: 
-      objectReference: {fileID: 1541118925}
     - target: {fileID: 6443136560860245242, guid: 57a820a1b15b97d40b2b68cd67817720, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -5177,6 +5170,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2058229882783112908, guid: 0b7b3d4dfd065c2439a1f927b8251953, type: 3}
   m_PrefabInstance: {fileID: 677097762}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1191100913 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3665276580250848716, guid: 19acf3da7980ccb46a2bed8546fdc44d, type: 3}
+  m_PrefabInstance: {fileID: 1278201503}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1244334839
 GameObject:
   m_ObjectHideFlags: 0
@@ -5331,6 +5335,10 @@ PrefabInstance:
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 2290179822551656662, guid: 19acf3da7980ccb46a2bed8546fdc44d, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 2851900104412001786, guid: 19acf3da7980ccb46a2bed8546fdc44d, type: 3}
       propertyPath: m_MatchWidthOrHeight
       value: 1
@@ -5423,13 +5431,49 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3665276580250848716, guid: 19acf3da7980ccb46a2bed8546fdc44d, type: 3}
+      propertyPath: m_Text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3665276580250848716, guid: 19acf3da7980ccb46a2bed8546fdc44d, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 4050156920869970203, guid: 19acf3da7980ccb46a2bed8546fdc44d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6471327292511636304, guid: 19acf3da7980ccb46a2bed8546fdc44d, type: 3}
       propertyPath: m_Name
       value: DialogCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6471327292511636304, guid: 19acf3da7980ccb46a2bed8546fdc44d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8083202013237225872, guid: 19acf3da7980ccb46a2bed8546fdc44d, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 8083202013237225872, guid: 19acf3da7980ccb46a2bed8546fdc44d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8083202013237225872, guid: 19acf3da7980ccb46a2bed8546fdc44d, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8083202013237225872, guid: 19acf3da7980ccb46a2bed8546fdc44d, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8083202013237225872, guid: 19acf3da7980ccb46a2bed8546fdc44d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8083202013237225872, guid: 19acf3da7980ccb46a2bed8546fdc44d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 35.80005
+      value: 75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10316,11 +10360,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5463845448780688297, guid: a7d5e162499d676488955b605d531249, type: 3}
       propertyPath: dialog.lines.Array.data[0]
-      value: Hello World!!
+      value: "Gizem'in hayat\u0131, her g\xFCn ayn\u0131 tempoda ilerleyen bir d\xF6ng\xFC
+        i\xE7inde s\u0131k\u0131\u015F\u0131p kalm\u0131\u015F gibi g\xF6r\xFCn\xFCyordu.
+        Sabah 9'da evinden \xE7\u0131k\u0131p, i\u015Fe gitmek \xFCzere yola d\xFC\u015F\xFCyordu.
+        Her g\xFCn gitti\u011Fi ayn\u0131 yol ve monoton i\u015F g\xFCnleri aras\u0131nda
+        kaybolmu\u015F gibiydi."
       objectReference: {fileID: 0}
     - target: {fileID: 5463845448780688297, guid: a7d5e162499d676488955b605d531249, type: 3}
       propertyPath: dialog.lines.Array.data[1]
-      value: Welcome to the game!!
+      value: "Gizem'in ya\u015Fam\u0131, rutinle\u015Fmi\u015F anlar\u0131n ard\u0131
+        arkas\u0131 kesilmeyen bir zincir gibiydi. Sabah\u0131n erken saatlerinde
+        yola \xE7\u0131k\u0131p, g\xFCn boyunca ayn\u0131 i\u015F etraf\u0131nda
+        d\xF6n\xFCp duruyor, ard\u0131ndan ak\u015Fam saatlerinde yine ayn\u0131
+        yollar\u0131 kullanarak eve d\xF6n\xFCyordu. \u0130\u015Fte b\xF6yle, g\xFCnler
+        birbirine benzer bir \u015Fekilde ak\u0131p gidiyordu."
       objectReference: {fileID: 0}
     - target: {fileID: 7258375163576421295, guid: a7d5e162499d676488955b605d531249, type: 3}
       propertyPath: m_IsActive
