@@ -7,30 +7,28 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private LayerMask wallLayer;
     [SerializeField] private Transform startPosition;
-    [SerializeField] private Dialog dialog;
 
     private Animator animator;
     private Rigidbody2D body;
     private BoxCollider2D boxCollider;
+    private bool canMove;
 
     private float wallJumpCooldown;
     private float horizontalInput;
 
     private void Awake()
     {
+        canMove = true;
+
         animator = GetComponent<Animator>();
         body = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
-        if (DialogManager.Instance != null)
-        {
-            StartCoroutine(DialogManager.Instance.ShowDialog(dialog));
-        }
     }
 
 
     private void Update()
     {
-
+        if (!canMove) { return; }
         if (Time.timeScale == 0) return;
 
         horizontalInput = Input.GetAxis("Horizontal");
@@ -71,7 +69,7 @@ public class PlayerMovement : MonoBehaviour
         {
             wallJumpCooldown += Time.deltaTime;
         }
-        if(Input.GetKey(KeyCode.R)) { ReturnToCheckPoint(); }
+        if (Input.GetKey(KeyCode.R)) { ReturnToCheckPoint(); }
     }
 
 
@@ -87,7 +85,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (horizontalInput == 0)
             {
-                
+
                 body.velocity = new Vector2(-Mathf.Sign(transform.localScale.x) * 15, 0);
                 transform.localScale = new Vector3(-Mathf.Sign(transform.localScale.x), transform.localScale.y, transform.localScale.z);
             }
@@ -116,6 +114,11 @@ public class PlayerMovement : MonoBehaviour
     public void ReturnToCheckPoint()
     {
         this.transform.position = startPosition.localPosition;
-
     }
+
+    public void SetCanMove(bool canMove)
+    {
+        this.canMove = canMove;
+    }
+
 }

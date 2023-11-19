@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public enum GameState { FreeRoam, Dialog, Battle };
@@ -16,7 +14,7 @@ public class GameController : MonoBehaviour
         };
         DialogManager.Instance.OnHideDialog += () =>
         {
-            if(gameState.Equals(GameState.Dialog))
+            if (gameState.Equals(GameState.Dialog))
                 gameState = GameState.FreeRoam;
         };
     }
@@ -25,7 +23,8 @@ public class GameController : MonoBehaviour
         if (gameState.Equals(GameState.Dialog))
         {
             DialogManager.Instance.HandleUpdate();
-        }else if (gameState.Equals(GameState.FreeRoam))
+        }
+        else if (gameState.Equals(GameState.FreeRoam))
         {
 
         }

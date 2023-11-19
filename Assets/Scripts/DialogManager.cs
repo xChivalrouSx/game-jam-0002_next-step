@@ -1,11 +1,11 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class DialogManager : MonoBehaviour
 {
+    [SerializeField] PlayerMovement playerMovement;
     [SerializeField] GameObject dialogBox;
     [SerializeField] Text dialogText;
 
@@ -38,11 +38,14 @@ public class DialogManager : MonoBehaviour
                 dialogBox.SetActive(false);
                 currentLine = 0;
                 OnHideDialog?.Invoke();
+                playerMovement.SetCanMove(true);
             }
         }
     }
     public IEnumerator ShowDialog(Dialog dialog)
     {
+        playerMovement.SetCanMove(false);
+
         yield return new WaitForEndOfFrame();
         OnShowDialog?.Invoke();
 
