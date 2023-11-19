@@ -3,29 +3,35 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class StartGame : MonoBehaviour
+public class MainMenuUI : MonoBehaviour
 {
-    [SerializeField] Button playButton;
-    [SerializeField] Button quitButton;
-    [SerializeField] Button settingButton;
-    [SerializeField] GameObject settingUI;
-
-    void Awake()
+    
+    public void Play()
     {
-        settingUI.SetActive(false);
-
-        playButton.onClick.AddListener(() =>
-        {
-            Loader.Load(Loader.Scene.Level1);
-        });
-
-        quitButton.onClick.AddListener(() =>
-        {
-            Application.Quit();
-        });
-        settingButton.onClick.AddListener(() =>
-        {
-            settingUI.SetActive(true);
-        });
+        Loader.Load(Loader.Scene.Level1);
     }
+
+    public void SoundVolume()
+    {
+        AudioManager.Instance?.SfxVolume(0.2f);
+    }
+
+    public void MusicVolume()
+    {
+        AudioManager.Instance?.MusicVolume(0.2f);
+    }
+
+    public void Credits()
+    {
+
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
+    }
+
 }

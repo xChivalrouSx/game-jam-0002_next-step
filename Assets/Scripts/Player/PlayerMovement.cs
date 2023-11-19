@@ -21,8 +21,10 @@ public class PlayerMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         body = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
-
-        StartCoroutine(DialogManager.Instance.ShowDialog(dialog));
+        if (DialogManager.Instance != null)
+        {
+            StartCoroutine(DialogManager.Instance.ShowDialog(dialog));
+        }
     }
 
     private void Update()
