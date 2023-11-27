@@ -1,5 +1,5 @@
 # game-jam-0002_next-step
-My second game jam.
+My second game jam. (Mağara Jam 2023)
 
 **With (only who has github):**
 - [Yiğit](https://github.com/yigit26)
@@ -13,6 +13,8 @@ My second game jam.
 **Game Jam Topic:** Mysterious Machine
 
 **Gameplay:** https://youtu.be/zmky127Q4AY?feature=shared
+
+**Music Asset:** MağaraJam 2023 Soundpack by SwishSwoosh
 
 ---
 
